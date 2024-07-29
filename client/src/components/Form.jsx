@@ -16,6 +16,7 @@ const Form = () => {
     "lifeSpan-min": "",
     "lifeSpan-max": "",
   });
+
   const { temperaments } = useSelector((state) => state);
   const [selected, setSelected] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -23,8 +24,9 @@ const Form = () => {
   const dispatch = useDispatch();
 
   const handlerSubmit = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
+
     if (Object.values(error).length > 0 || !selected.length) {
       if (!selected.length) {
         setError({
@@ -35,6 +37,7 @@ const Form = () => {
       setLoading(false);
       return;
     }
+
     try {
       await fetch("http://localhost:3001/dogs", {
         method: "POST",
@@ -50,6 +53,7 @@ const Form = () => {
           life_span: `${inputs["lifeSpan-min"]} - ${inputs["lifeSpan-max"]} years`,
         }),
       });
+
       dispatch(getAllDogs());
       setInputs({
         name: "",
@@ -65,6 +69,7 @@ const Form = () => {
       setLoading(false);
     } catch (error) {
       console.error(new Error(error));
+      setLoading(false);
     }
   };
 
@@ -80,6 +85,7 @@ const Form = () => {
       })
     );
   };
+
   const deleteTemperament = (element) => {
     const filteredArray = selected.filter((item) => item !== element);
     setSelected(filteredArray);
@@ -96,9 +102,10 @@ const Form = () => {
     }
     setSelected([e.target.value]);
   };
+
   return (
     <form className="Form" onSubmit={handlerSubmit}>
-      <div>
+      <div className="Form__group">
         <label>Raza</label>
         <input
           value={inputs.name}
@@ -109,7 +116,8 @@ const Form = () => {
         />
         {error.name && <p className="Form__warning">{error.name}</p>}
       </div>
-      <div>
+
+      <div className="Form__group">
         <label>Imagen</label>
         <input
           value={inputs.imagen}
@@ -120,7 +128,8 @@ const Form = () => {
         />
         {error.imagen && <p className="Form__warning">{error.imagen}</p>}
       </div>
-      <div>
+
+      <div className="Form__group">
         <p>Peso</p>
         <label>
           <p>Min: {inputs["peso-min"]} kgs</p>
@@ -145,9 +154,7 @@ const Form = () => {
           />
         </label>
         {error["peso-min"] && error["peso-max"] && (
-          <p className="Form__warning">
-            Los campos de Peso no pueden estar en 0
-          </p>
+          <p className="Form__warning">Los campos de Peso no pueden estar en 0</p>
         )}
         {error["peso-min"] && !error["peso-max"] && (
           <p className="Form__warning">{error["peso-min"]}</p>
@@ -157,8 +164,9 @@ const Form = () => {
         )}
         {error.peso && <p className="Form__warning">{error.peso}</p>}
       </div>
-      <div>
-        <p>Altura </p>
+
+      <div className="Form__group">
+        <p>Altura</p>
         <label>
           <p>Min: {inputs["altura-min"]} cm</p>
           <input
@@ -182,9 +190,7 @@ const Form = () => {
           />
         </label>
         {error["altura-min"] && error["altura-max"] && (
-          <p className="Form__warning">
-            Los campos de altura no pueden estar en 0
-          </p>
+          <p className="Form__warning">Los campos de altura no pueden estar en 0</p>
         )}
         {error["altura-min"] && !error["altura-max"] && (
           <p className="Form__warning">{error["altura-min"]}</p>
@@ -195,7 +201,7 @@ const Form = () => {
         {error.altura && <p className="Form__warning">{error.altura}</p>}
       </div>
 
-      <div>
+      <div className="Form__group">
         <p>Años de vida</p>
         <div className="LifeSpan__container">
           <input
@@ -222,7 +228,8 @@ const Form = () => {
           <p className="Form__warning">{error["lifeSpan"]}</p>
         )}
       </div>
-      <div>
+
+      <div className="Form__group">
         <label>Temperamentos</label>
         <select onChange={handlerTemperaments}>
           {temperaments?.map((item) => (
@@ -234,7 +241,7 @@ const Form = () => {
         {selected.length > 0 && (
           <div className="Temperaments__container">
             {selected.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="Temperaments__item">
                 {item}
                 <p
                   className="Temperaments__button"
@@ -250,8 +257,9 @@ const Form = () => {
           <p className="Form__warning">{error.temperaments}</p>
         )}
       </div>
+
       <button
-        className={loading && "buttonLoad"}
+        className={`Form__submit ${loading && "buttonLoad"}`}
         disabled={
           !Object.values(inputs)
             .splice(2, 6)

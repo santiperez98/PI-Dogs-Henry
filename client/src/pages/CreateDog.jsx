@@ -14,7 +14,7 @@ const CreateDog = () => {
       <Header show={true} />
       <section className="Create__container">
         <div>
-          <img src={logoPerro} alt="Logo de un perro" />
+  
           <h3>Crea tu Perro</h3>
         </div>
         <Form />

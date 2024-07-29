@@ -23,7 +23,7 @@ const Header = ({ show }) => {
           <Link to="/createDog">
             <li>Crear perro</li>
           </Link>
-          <Link to="/favourites">
+          <Link to="/favoritos">
             <li>Favoritos</li>
           </Link>
         </ul>
