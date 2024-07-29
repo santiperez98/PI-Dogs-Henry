@@ -15,4 +15,4 @@ const ModalProvider = (props) => {
     )
 }
 
-export { ModalContext, ModalProvider }
+export { ModalContext, ModalProvider };
