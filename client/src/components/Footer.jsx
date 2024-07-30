@@ -1,5 +1,11 @@
 import React from 'react';
-import '../styles/footer.css'; // Asegúrate de que este archivo exista y esté en la ruta correcta
+import '../styles/footer.css'; 
+
+
+import golden from '../assets/golden.jpg';
+import border from '../assets/border.jpg';
+import samoyedo from '../assets/samoyedo.jpg';
+import labrador from '../assets/labrador.jpg';
 
 const Footer = () => {
   return (
@@ -15,7 +21,6 @@ const Footer = () => {
             <li><a href="/home">Inicio</a></li>
             <li><a href="/createDog">Crear Perro</a></li>
             <li><a href="/favoritos">Favoritos</a></li>
-            
           </ul>
         </div>
         <div className="footer-section">
@@ -31,10 +36,10 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Galería de Perros</h4>
           <div className="dog-gallery">
-            <img src="/path/to/dog1.jpg" alt="Dog 1" />
-            <img src="/path/to/dog2.jpg" alt="Dog 2" />
-            <img src="/path/to/dog3.jpg" alt="Dog 3" />
-            <img src="/path/to/dog4.jpg" alt="Dog 4" />
+            <img src={golden} alt="Dog 1" />
+            <img src={border} alt="Dog 2" />
+            <img src={samoyedo} alt="Dog 3" />
+            <img src={labrador} alt="Dog 4" />
           </div>
         </div>
       </div>

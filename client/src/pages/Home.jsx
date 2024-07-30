@@ -26,6 +26,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const [filterOptions, setFilterOptions] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
+
   const handlerFilters = (e) => {
     setFilterOptions({
       ...filterOptions,
@@ -50,14 +51,9 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // if (filteredDogs?.length === 0) {
-    //   dispatch(getAllDogs(createDic()));
-    //   dispatch(getAllTemperaments());
-    // }
     dispatch(getAllDogs(createDic()));
     dispatch(getAllTemperaments());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch, createDic]); // Incluye 'dispatch' y 'createDic' en la lista de dependencias
 
   return (
     <div className="Home">
@@ -73,7 +69,6 @@ const Home = () => {
       {loading && <Loader />}
       {!loading && (
         <>
-
           <section className="Home__data">
             <Cards allDogs={filteredDogs[currentPage]} />
           </section>
@@ -82,9 +77,8 @@ const Home = () => {
             setCurrentPage={setCurrentPage}
           />
         </>
-        
       )}
-      <Footer/>
+      <Footer />
     </div>
   );
 };

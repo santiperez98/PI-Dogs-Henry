@@ -1,5 +1,5 @@
 import Form from "../components/Form";
-import logoPerro from "../assets/Puppy-Dog-Face-PNG-Photos.png";
+
 import { ModalContext } from "../context";
 import Modal from "../components/Modal";
 import { useContext } from "react";

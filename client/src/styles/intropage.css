@@ -4,18 +4,18 @@
   align-items: center;
   text-align: center;
   padding: 20px;
-  min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la ventana */
-  background-color: #f0f2f5; /* Un color de fondo suave para el contraste */
+  min-height: 100vh; 
+  background-color: #f0f2f5;
 }
 
 .header {
   display: flex;
   align-items: center;
-  width: 100%; /* Asegura que el contenedor de la cabecera ocupe el ancho completo */
-  max-width: 1200px; /* Limita el ancho máximo para que no se estire demasiado en pantallas grandes */
+  width: 100%; 
+  max-width: 1200px; 
   margin-bottom: 20px;
   padding: 0 20px;
-  justify-content: space-between; /* Alinea el contenido en los extremos */
+  justify-content: space-between; 
 }
 
 .logo {
@@ -38,18 +38,18 @@
 
 .intro-text2 {
   font-size: large;
-  background-image: url('../assets/intro.png'); /* Asegúrate de usar la ruta correcta de la imagen */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el div */
-  background-position: center; /* Centra la imagen en el div */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  min-width: 931px; /* Asegura que el div tenga un ancho mínimo */
-  min-height: 405px; /* Ajusta la altura mínima del div */
+  background-image: url('../assets/intro.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  min-width: 931px; 
+  min-height: 405px; 
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; /* Centra el contenido verticalmente */
-  text-align: bottom; /* Centra el texto */
-  color: rgb(0, 0, 0); /* Ajusta el color del texto para que contraste con la imagen */
+  flex-direction: column;
+  text-align: bottom; 
+  color: rgb(0, 0, 0); 
 }
 
 .welcome-image {
@@ -60,15 +60,15 @@
 
 .features {
   display: flex;
-  flex-wrap: wrap; /* Permite que los recuadros se ajusten a la siguiente línea si no hay suficiente espacio horizontal */
-  justify-content: center; /* Centra los recuadros horizontalmente */
-  gap: 10px; /* Espacio entre los recuadros */
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 10px; 
   margin-bottom: 20px;
 }
 
 .feature-box {
   width: 180px;
-  height: 150px; /* Ajusta la altura total para acomodar imagen y texto */
+  height: 150px; 
   background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 8px;
@@ -76,34 +76,34 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease-in-out;
   display: flex;
-  flex-direction: column; /* Alinea los elementos en columna */
+  flex-direction: column; 
   align-items: center;
   justify-content: center;
 }
 
 .feature-box img {
-  max-width: 100px; /* Limita el tamaño máximo de la imagen */
+  max-width: 100px; 
   height: auto;
-  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+  margin-bottom: 10px; 
 }
 
 .feature-box p {
-  font-size: 0.9rem; /* Ajusta el tamaño del texto si es necesario */
-  color: #333; /* Color del texto */
-  text-align: center; /* Centra el texto */
+  font-size: 0.9rem; 
+  color: #333; 
+  text-align: center; 
 }
 
 .feature-box:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 .start-button {
-  display: inline-flex; /* Para alinear el texto y la flecha */
+  display: inline-flex; 
   align-items: center;
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
-  background-color: #007bff; /* Color de fondo inicial */
+  background-color: #007bff;
   border: none;
   border-radius: 4px;
   text-align: center;
@@ -113,17 +113,17 @@
 }
 
 .start-button .arrow {
-  margin-left: 10px; /* Espacio entre el texto y la flecha */
-  font-size: 1.2rem; /* Tamaño de la flecha */
+  margin-left: 10px; 
+  font-size: 1.2rem; 
   display: inline-block;
-  transition: transform 0.3s ease-in-out; /* Transición para el movimiento de la flecha */
+  transition: transform 0.3s ease-in-out; 
 }
 
 .start-button:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el mouse */
-  transform: translateX(10px); /* Mueve el botón a la derecha al pasar el mouse */
+  background-color: #0056b3; 
+  transform: translateX(10px); 
 }
 
 .start-button:hover .arrow {
-  transform: translateX(5px); /* Mueve la flecha hacia la derecha */
+  transform: translateX(5px); 
 }

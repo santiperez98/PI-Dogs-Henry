@@ -37,7 +37,7 @@
 }
 
 .filter-button-apply {
-  background-image: url('../assets/border.jpg'); /* Asegúrate de que esta imagen exista en la ruta correcta */
+  background-image: url('../assets/border.jpg'); 
   background-size: cover;
   background-position: center;
   color: white;

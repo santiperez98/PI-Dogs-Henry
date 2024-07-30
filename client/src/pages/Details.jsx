@@ -16,8 +16,7 @@ const Details = () => {
   useEffect(() => {
     dispatch(cleanDetails());
     dispatch(getDogByID(id));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  }, [dispatch, id]); // Incluye 'dispatch' y 'id' como dependencias
 
   return (
     <>

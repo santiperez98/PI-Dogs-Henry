@@ -1,12 +1,12 @@
 .footer {
-    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    width: 100%; 
     background-color: var(--primary-color);
     color: gray;
     padding: 40px 20px;
     text-align: left;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra similar a la del header */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); 
   }
   
   .footer-container {

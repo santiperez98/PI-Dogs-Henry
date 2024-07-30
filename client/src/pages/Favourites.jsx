@@ -13,8 +13,7 @@ const Favourites = () => {
 
   useEffect(() => {
     setFavs(getLocalStorage());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [getLocalStorage]); // Incluye 'getLocalStorage' como dependencia
 
   return (
     <div className="Favourites">
