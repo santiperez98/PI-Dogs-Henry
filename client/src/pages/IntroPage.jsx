@@ -27,23 +27,23 @@ const IntroPage = () => {
       <div className="features">
         <div className="feature-box">
           <img src={featureImage1} alt="Busca a tu perro favorito" />
-          Busca a tu perro favorito
+          <p>Busca a tu perro favorito</p>
         </div>
         <div className="feature-box">
           <img src={featureImage2} alt="Filtra por raza o temperamento" />
-          Filtra por raza o temperamento
+          <p>Filtra por raza o temperamento</p>
         </div>
         <div className="feature-box">
           <img src={featureImage3} alt="Guardalos siempre contigo" />
-          Guardalos siempre contigo
+          <p>Guardalos siempre contigo</p>
         </div>
         <div className="feature-box">
           <img src={featureImage4} alt="Razas de todo el mundo" />
-          Razas de todo el mundo
+          <p>Razas de todo el mundo</p>
         </div>
         <div className="feature-box">
           <img src={featureImage5} alt="Agrega un nuevo amigo" />
-          Agrega un nuevo amigo
+          <p>Agrega un nuevo amigo</p>
         </div>
       </div>
       <Link to="/home" className="start-button">

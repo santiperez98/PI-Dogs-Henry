@@ -31,7 +31,7 @@ const Card = ({ image, name, temperaments, weight, id, isFav }) => {
   return (
     <div className="card-container" style={{ backgroundImage: `url(${image})` }}>
       <button className="card-fav-button" onClick={handlerFavourite}>
-        {isFavourite ? "💛" : "🤍"}
+        {isFavourite ? "🧡" : "🤍"}
       </button>
       <div className="card-info">
         <div className="info-name">

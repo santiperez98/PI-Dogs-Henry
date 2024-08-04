@@ -63,19 +63,22 @@ export const getAllDogs = (dictonary) => {
 }
 
 export const getAllTemperaments = () => {
-    return async (dispatch) => {
-        try {
-            const res = await fetch('http://localhost:3001/temperaments')
-            const data = await res.json()
-            dispatch({
-                type: GET_ALLTEMPERAMENTS,
-                payload: data
+    return (dispatch) => {
+        fetch('http://localhost:3001/temperaments')
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({
+                    type: GET_ALLTEMPERAMENTS,
+                    payload: data
+                });
             })
-        } catch (error) {
-          console.error(new Error(error))  
-        }
-    }
-}
+            .catch((error) => {
+                console.error(new Error(error));  // Aún podrías considerar usar alert() para notificar al usuario
+                alert('Hubo un error al obtener los temperamentos. Por favor, inténtalo de nuevo más tarde.');
+            });
+    };
+};
+
 
 export const getDogByID = (id) => {
     return async (dispatch) => {

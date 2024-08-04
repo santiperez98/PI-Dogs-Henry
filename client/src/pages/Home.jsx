@@ -53,7 +53,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(getAllDogs(createDic()));
     dispatch(getAllTemperaments());
-  }, [dispatch, createDic]); // Incluye 'dispatch' y 'createDic' en la lista de dependencias
+  }, []); // Incluye 'dispatch' y 'createDic' en la lista de dependencias
 
   return (
     <div className="Home">
